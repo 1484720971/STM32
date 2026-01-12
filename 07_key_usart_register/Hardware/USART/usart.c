@@ -1,4 +1,5 @@
 #include <usart.h>
+#include <stdio.h>
 
 /**
  * IO重定向 设置PA9 PA10为默认复用功能
@@ -85,4 +86,11 @@ void USART1_ReceiveBytes(uint8_t* buffer, uint8_t len)
     {
         buffer[i] = USART1_ReceiveByte();
     }
+}
+
+int fputc(int ch, FILE *file)
+{
+    USART1_TransmitByte(ch);
+
+    return ch;
 }
