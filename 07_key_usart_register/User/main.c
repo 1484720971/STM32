@@ -14,6 +14,7 @@ int main(void)
 	// 发送
 	USART1_TransmitBytes(str, strlen((const char *)str));
 
+	// 接收
 	USART1_ReceiveBytes(buffer, 7);
 	USART1_TransmitBytes(buffer, 7);
 	while (1)
