@@ -1,0 +1,7 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Programs\Keil\ARM\arm5_compiler\Bin'
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: Code=728 RO-data=320 RW-data=0 ZI-data=1632  
+".\Objects\01_led_on_register.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:01
