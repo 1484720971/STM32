@@ -13,3 +13,27 @@
 # eide template
 *.ept
 *.eide-template
+
+# -------------------------------------------------------------------
+# Keil / ARM Compiler Output Files
+# -------------------------------------------------------------------
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.d
+*.axf
+*.iex
+*.dep
+*.dbg
+*.crf
+*.htm
+*.lnp
+*.sct
+
+# Keil IDE personal settings
+*.uvgui.*
+*.uvguix.*
