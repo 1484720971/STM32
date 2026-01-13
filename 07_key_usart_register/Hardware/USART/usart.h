@@ -3,10 +3,20 @@
 
 #include "stm32f10x.h"
 
+extern uint8_t it_rx_buffer[100];
+extern uint8_t it_rx_num;
+extern uint8_t it_rx_idle_flag;
+
 /**
  * USART1初始化
  */
 void USART1_Init(void);
+
+/**
+ * @brief USART1初始化带中断
+ * 
+ */
+void USART1_InitWithIt(void);
 
 /**
  * USART1发送一个字节

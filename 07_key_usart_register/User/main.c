@@ -5,20 +5,36 @@
 #include <string.h>
 #include <stdio.h>
 
-const uint8_t c = 128;
 
 int main(void)
 {
-	USART1_Init();
+	// USART1_Init();
+	LED_Init();
+	USART1_InitWithIt();
 
-	uint8_t buffer[100] = { 0 };
-	uint8_t len = 0;
 	while (1)
 	{
-		USART1_ReceiveBytesToIdle(buffer, &len);
+		if (it_rx_idle_flag == 1)
+		{
+			it_rx_idle_flag = 0;
+			printf("len = %d content = %s", it_rx_num, it_rx_buffer);
 
-		printf("len = %d, content = %s\n", len, buffer);
+			// 清零
+			memset(it_rx_buffer, 0, it_rx_num);
+			it_rx_num = 0;
+		}
 
-		memset(buffer, 0, len);	// 清空缓冲区
+
+		LED_On(LED1);
+		Delay_ms(200);
+		LED_Off(LED1);
+
+		LED_On(LED2);
+		Delay_ms(200);
+		LED_Off(LED2);
+
+		LED_On(LED3);
+		Delay_ms(200);
+		LED_Off(LED3);
 	}
 }
