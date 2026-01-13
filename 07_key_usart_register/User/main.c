@@ -11,10 +11,14 @@ int main(void)
 {
 	USART1_Init();
 
-	// 查看变量C的地址
-	printf("address = %x", &c);
+	uint8_t buffer[100] = { 0 };
+	uint8_t len = 0;
 	while (1)
 	{
-		
+		USART1_ReceiveBytesToIdle(buffer, &len);
+
+		printf("len = %d, content = %s\n", len, buffer);
+
+		memset(buffer, 0, len);	// 清空缓冲区
 	}
 }

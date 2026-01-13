@@ -7,9 +7,9 @@
  * PA10 -> USART_RX     因为PA10要设置为USART的接收引脚，所以要设置为输入模式。因为，串口接收数据是被动接收外部电平，浮空输入对串口数据的识别最准确，禁止配置为上拉 / 下拉输入，会导致串口接收乱码。
  */
 
-/**
- * USART1初始化
- */
+ /**
+  * USART1初始化
+  */
 void USART1_Init(void)
 {
     // 1. PA9 和 PA10 开启复用功能
@@ -61,7 +61,7 @@ uint8_t USART1_ReceiveByte(void)
 {
     while ((USART1->SR & USART_SR_RXNE) == 0)
     {
-        
+
     }
     return USART1->DR;
 }
@@ -69,7 +69,7 @@ uint8_t USART1_ReceiveByte(void)
 /**
  * USART发送字符串
  */
-uint8_t USART1_TransmitBytes(uint8_t *bytes, uint8_t len)
+void USART1_TransmitBytes(uint8_t* bytes, uint8_t len)
 {
     for (uint8_t i = 0; i < len; i++)
     {
@@ -88,7 +88,36 @@ void USART1_ReceiveBytes(uint8_t* buffer, uint8_t len)
     }
 }
 
-int fputc(int ch, FILE *file)
+/**
+ * @brief  使用IDLE中断机制接收字节数据
+ *         该函数利用USART1的IDLE中断特性来接收一帧完整的数据
+ * @param  buffer 指向接收数据缓冲区的指针
+ * @param  len 用于存储实际接收到的字节数的变量的指针
+ * @retval None
+ */
+void USART1_ReceiveBytesToIdle(uint8_t* buffer, uint8_t* len)
+{
+    uint8_t count = 0;  // 记录已接收的字节数
+    while (1)
+    {
+        // 等待接收数据寄存器RXNE置位
+        while ((USART1->SR & USART_SR_RXNE) == 0)
+        {
+            // 检查是否检测到总线空闲状态(IDLE)
+            if (USART1->SR & USART_SR_IDLE) // 要清除IDLE位，先读SR寄存器
+            {
+                USART1->DR;     // 再读DR寄存器，就可将IDLE位清除
+                *len = count;   // 保存接收到的字节数
+                return;         // 结束函数
+            }
+        }
+
+        // 从数据寄存器读取接收到的字节，并递增计数器
+        buffer[count++] = USART1->DR & USART_DR_DR;
+    }
+}
+
+int fputc(int ch, FILE* file)
 {
     USART1_TransmitByte(ch);
 
