@@ -9,8 +9,10 @@
 int main(void)
 {
 	// USART1_Init();
-	LED_Init();
+	LED_Init();  // 初始化
 	USART1_InitWithIt();
+
+	LED_On(LED1);
 
 	while (1)
 	{
