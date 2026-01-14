@@ -55,7 +55,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+extern uint8_t complete_flag;
 /* USER CODE END 0 */
 
 /**
@@ -91,14 +91,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   uint8_t *str = "hello";
-
   HAL_UART_Transmit(&huart1, str, 5, UINT32_MAX);
 
   uint8_t buffer[100] = {0};
 
-  HAL_UART_Receive(&huart1, buffer, 5, 5000);
-
-  HAL_UART_Transmit(&huart1, buffer, 5, UINT32_MAX);
+  HAL_UART_Receive_IT(&huart1, buffer, 5);
 
   /* USER CODE END 2 */
 
@@ -106,6 +103,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    if ((huart1.Instance->CR1 & USART_CR1_RXNEIE) == 0)
+    {
+      HAL_UART_Transmit(&huart1, buffer, 5, UINT32_MAX);
+      HAL_UART_Receive_IT(&huart1, buffer, 5);
+    }
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
