@@ -89,18 +89,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t *str = "Hello World";
   uint8_t buffer[100] = {0};
-
-  /* ---------------- 定长发送（阻塞式） ---------------- */
-
-  // HAL_UART_Transmit(&huart1, str, 11, UINT32_MAX);
-
-  // /* ---------------- 定长接收（阻塞式） ---------------- */
-
-  // HAL_UART_Receive(&huart1, buffer, 11, UINT32_MAX);
-  // HAL_UART_Transmit(&huart1, buffer, 11, UINT32_MAX);
-  // printf("%s\n", buffer);
 
   /* ---------------- 定长接收（非阻塞式） ---------------- */
   HAL_UART_Receive_IT(&huart1, buffer, 11);
