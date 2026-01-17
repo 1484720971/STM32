@@ -90,12 +90,9 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   uint8_t buffer[100] = {0};
-  uint16_t len = 0;
 
-  /* ---------------- 变长接收（阻塞式） ---------------- */
-  HAL_UARTEx_ReceiveToIdle(&huart1, buffer, 100, &len, UINT32_MAX);
-
-  printf("len = %d, content = %s\n", len, buffer);
+  /* ---------------- 变长接收（非阻塞式） ---------------- */
+  HAL_UARTEx_ReceiveToIdle_IT(&huart1, buffer, 100);
 
   /* USER CODE END 2 */
 
