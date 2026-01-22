@@ -1,0 +1,9 @@
+.\objects\m24c02.o: Interface\EEPROM\M24C02.c
+.\objects\m24c02.o: Interface\EEPROM\M24C02.h
+.\objects\m24c02.o: .\Hardware\I2C\hard_I2C.h
+.\objects\m24c02.o: .\Start\stm32f10x.h
+.\objects\m24c02.o: .\Start\core_cm3.h
+.\objects\m24c02.o: D:\Programs\Keil\ARM\arm5_compiler\Bin\..\include\stdint.h
+.\objects\m24c02.o: .\Start\system_stm32f10x.h
+.\objects\m24c02.o: .\User\delay.h
+.\objects\m24c02.o: D:\Programs\Keil\ARM\arm5_compiler\Bin\..\include\stdio.h

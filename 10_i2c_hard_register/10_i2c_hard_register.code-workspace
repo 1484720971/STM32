@@ -6,7 +6,12 @@
     ],
     "settings": {
         "files.associations": {
-            "hard_i2c.h": "c"
+            "hard_i2c.h": "c",
+            "m24c02.h": "c",
+            "usart.h": "c",
+            "delay.h": "c",
+            "stm32f10x.h": "c",
+            "stdio.h": "c"
         }
     },
     "extensions": {}

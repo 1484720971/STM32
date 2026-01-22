@@ -30,17 +30,26 @@ void I2C_Init(void)
  * 通讯速度为100kbit/s  时钟周期为10us
  *
  * 约定我们需要确保每一个函数结束时的状态
- * 应该确保 时钟线是低电平（控制权在主设备手里） SDA是高电平
+ * 应该确保 时钟线是低电平（控制权在主设备手里）  SDA是高电平
+ * 
+ * I2C起始条件：SCL高电平期间，SDA从高电平跳变到低电平
  */
 void I2C_Start(void)
 {
+    // 1. 确保总线空闲：SCL和SDA都处于高电平
     SCL_HIGH;
     SDA_HIGH;
     Delay_us(2);
+    
+    // 2. 产生起始信号：在SCL高电平期间，SDA拉低
     SDA_LOW;
     Delay_us(3);
+    
+    // 3. 拉低SCL，准备数据传输（此时SDA保持低电平）
     SCL_LOW;
     Delay_us(5);
+    
+    // 4. 释放SDA线（拉高），根据约定：结束时SCL低、SDA高
     SDA_HIGH;
 }
 

@@ -1,0 +1,71 @@
+Dependencies for Project '10_i2c_hard_register', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\arm5_compiler
+F (.\User\main.c)(0x6970AAC3)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\Interface\EEPROM\M24C02.h)(0x697091B7)
+I (.\Hardware\I2C\hard_I2C.h)(0x6970964E)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+I (.\User\delay.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdio.h)(0x67690F39)
+I (.\Hardware\USART\usart.h)(0x696626DC)
+F (.\User\delay.c)(0x69659F9B)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (.\User\delay.h)(0x69659F9B)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+F (.\User\delay.h)(0x69659F9B)()
+F (.\Start\core_cm3.c)(0x69659F9B)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+F (.\Start\core_cm3.h)(0x69659F9B)()
+F (.\Start\startup_stm32f10x_hd.s)(0x69659F9B)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 538" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o .\objects\startup_stm32f10x_hd.o --depend .\objects\startup_stm32f10x_hd.d)
+F (.\Start\stm32f10x.h)(0x69659F9B)()
+F (.\Start\system_stm32f10x.c)(0x69659F9B)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
+I (Start\stm32f10x.h)(0x69659F9B)
+I (Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (Start\system_stm32f10x.h)(0x69659F9B)
+F (.\Start\system_stm32f10x.h)(0x69659F9B)()
+F (.\Hardware\LED\led.c)(0x696B4D5A)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (Hardware\LED\led.h)(0x696B4D5F)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+F (.\Hardware\LED\led.h)(0x696B4D5F)()
+F (.\Hardware\KEY\key.c)(0x696B4D66)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\key.o --omf_browse .\objects\key.crf --depend .\objects\key.d)
+I (Hardware\KEY\key.h)(0x696B4D71)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+I (.\Hardware\LED\led.h)(0x696B4D5F)
+I (.\User\delay.h)(0x69659F9B)
+F (.\Hardware\KEY\key.h)(0x696B4D71)()
+F (.\Hardware\USART\usart.c)(0x696626DC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
+I (.\Hardware\USART\usart.h)(0x696626DC)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdio.h)(0x67690F39)
+F (.\Hardware\USART\usart.h)(0x696626DC)()
+F (.\Hardware\I2C\hard_I2C.c)(0x6970ADF1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\hard_i2c.o --omf_browse .\objects\hard_i2c.crf --depend .\objects\hard_i2c.d)
+I (Hardware\I2C\hard_I2C.h)(0x6970964E)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+F (.\Hardware\I2C\hard_I2C.h)(0x6970964E)()
+F (.\Interface\EEPROM\M24C02.c)(0x6970ACE4)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Hardware\LED -I .\Hardware\KEY -I .\Hardware\USART -I .\Hardware\I2C -I .\Interface\EEPROM-ID:\Programs\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o .\objects\m24c02.o --omf_browse .\objects\m24c02.crf --depend .\objects\m24c02.d)
+I (Interface\EEPROM\M24C02.h)(0x697091B7)
+I (.\Hardware\I2C\hard_I2C.h)(0x6970964E)
+I (.\Start\stm32f10x.h)(0x69659F9B)
+I (.\Start\core_cm3.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdint.h)(0x67690F38)
+I (.\Start\system_stm32f10x.h)(0x69659F9B)
+I (.\User\delay.h)(0x69659F9B)
+I (D:\Programs\Keil\ARM\arm5_compiler\include\stdio.h)(0x67690F39)
+F (.\Interface\EEPROM\M24C02.h)(0x697091B7)()

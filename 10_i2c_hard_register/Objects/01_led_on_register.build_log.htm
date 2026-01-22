@@ -1,0 +1,110 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=HN0AE-5I953-74AS0-BNEUE-TN50P-4RAZ1
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  D:\Programs\Keil\ARM\arm5_compiler\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\code\Embedded\STM32_code\STM32\10_i2c_hard_register\10_i2c_hard_register.uvprojx
+Project File Date:  01/21/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Programs\Keil\ARM\arm5_compiler\Bin'
+Build target 'Target 1'
+assembling startup_stm32f10x_hd.s...
+compiling core_cm3.c...
+compiling main.c...
+.\Hardware\I2C\hard_I2C.h(76): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Interface\EEPROM\M24C02.h(49): warning:  #1-D: last line of file ends without a newline
+  #endif /* __M24C02_H__ */
+.\Hardware\USART\usart.h(29): warning:  #1295-D: Deprecated declaration USART1_ReceiveByte - give arg types
+  uint8_t USART1_ReceiveByte();
+.\Hardware\USART\usart.h(47): warning:  #1-D: last line of file ends without a newline
+  #endif /* __USART_H__ */
+User\main.c: 5 warnings, 0 errors
+compiling M24C02.c...
+.\Hardware\I2C\hard_I2C.h(76): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+Interface\EEPROM\M24C02.h(49): warning:  #1-D: last line of file ends without a newline
+  #endif /* __M24C02_H__ */
+Interface\EEPROM\M24C02.c(111): warning:  #1-D: last line of file ends without a newline
+  }
+Interface\EEPROM\M24C02.c: 4 warnings, 0 errors
+compiling system_stm32f10x.c...
+compiling led.c...
+Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\LED\led.c(53): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\LED\led.c: 2 warnings, 0 errors
+compiling delay.c...
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+User\delay.c(42): warning:  #1-D: last line of file ends without a newline
+  }
+User\delay.c: 2 warnings, 0 errors
+compiling key.c...
+.\Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\KEY\key.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\KEY\key.c(55): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\KEY\key.c: 4 warnings, 0 errors
+compiling usart.c...
+.\Hardware\USART\usart.h(29): warning:  #1295-D: Deprecated declaration USART1_ReceiveByte - give arg types
+  uint8_t USART1_ReceiveByte();
+.\Hardware\USART\usart.h(47): warning:  #1-D: last line of file ends without a newline
+  #endif /* __USART_H__ */
+Hardware\USART\usart.c(216): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\USART\usart.c: 3 warnings, 0 errors
+compiling hard_I2C.c...
+Hardware\I2C\hard_I2C.h(76): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\I2C\hard_I2C.c(187): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\I2C\hard_I2C.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=1688 RO-data=336 RW-data=8 ZI-data=1128  
+FromELF: creating hex file...
+".\Objects\01_led_on_register.axf" - 0 Error(s), 22 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  D:/Programs/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

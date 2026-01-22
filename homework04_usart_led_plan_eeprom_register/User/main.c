@@ -17,8 +17,6 @@ int main(void)
 
     led_schedule_init();
 
-    // M24C02_ReadBytes(0x00, 5, "00000");
-
     while (1)
     {
         if (it_rx_idle_flag == 1)
@@ -34,7 +32,7 @@ int main(void)
             memset(it_rx_buffer, 0, it_rx_num);
             it_rx_num = 0;
             it_rx_idle_flag = 0;
-        }
+        } 
 
         led_schedule_run_cycle();
     }

@@ -1,27 +1,26 @@
 #include "M24C02.h"
-#include "usart.h"
 #include <stdio.h>
+#include "usart.h"
 
 int main(void)
 {
-    M24C02_Init();
     USART1_Init();
+    M24C02_Init();
 
-    /* ------------- 写入单个字节 ------------- */
-    M24C02_SendByte(0x00, 'a');
+    /* --------------- 发送单个字节 --------------- */
+//     M24C02_SendByte(0x01, 'b');
 
-    /* ------------- 写入多个字节 ------------- */
-    M24C02_SendBytes(0x01, "bcd", 3);
+    M24C02_SendBytes(0x00, "ABCDE", 5);
 
-    /* ------------- 读取单个字节 ------------- */
-    printf("%c\n", M24C02_ReadByte(0x00));
+    /* --------------- 读取单个字节 --------------- */
+//     printf("%c", M24C02_ReadByte(0x01));
 
-    /* ------------- 读取多个字节 ------------- */
-    uint8_t buffer[5] = {0};
-    M24C02_ReadBytes(0x00, 4, buffer);
-    printf("%s\n", buffer);
+    uint8_t buffer[10] = {0};
+    M24C02_ReadBytes(0x00, 5, buffer);
+    printf("%s", buffer);
 
     while (1)
     {
+       
     }
 }

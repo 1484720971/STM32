@@ -2,9 +2,11 @@
 #define __M24C02_H__
 
 #include "hard_I2C.h"
+#include "delay.h"
+#include <stdio.h>
 
-#define WRITE_ADDR 0xA0
-#define READ_ADDR 0xA1
+#define WRITE_ADDR 0xA0 // EEPROM写地址
+#define READ_ADDR 0xA1  // EEPROM读地址
 
 /**
  * @brief M24C02初始化
@@ -25,7 +27,7 @@ void M24C02_SendByte(uint8_t addr, uint8_t data);
  * @param addr 写入的地址
  * @param data 写入的数据
  */
-void M24C02_SendBytes(uint8_t addr, uint8_t *pData, uint8_t len);
+void M24C02_SendBytes(uint8_t start_addr, uint8_t *pData, uint8_t len);
 
 /**
  * @brief 从M24C02中读取一个字节数据
