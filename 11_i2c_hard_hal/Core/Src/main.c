@@ -15,8 +15,8 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
+  /* USER CODE END Header */
+  /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
 #include "usart.h"
@@ -45,13 +45,23 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t buffer[10] = { 0 };
+uint16_t leds[3] = { LED1_Pin, LED2_Pin, LED3_Pin };
+uint8_t cmd_index = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+uint16_t get_led_pin(uint8_t ch)
+{
+  printf("%c\n", ch);
+  if (ch >= '1' && ch <= '3')
+  {
+    return leds[ch - '0' - 1];
+  }
+  return leds[0];
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -91,13 +101,45 @@ int main(void)
   MX_I2C2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  printf("Hello World!!!");
+  HAL_I2C_Mem_Read(&hi2c2, 0xA0, 0x00, I2C_MEMADD_SIZE_8BIT, buffer, 5, UINT32_MAX);
+
+  // 开启了中断使能,开始允许接收指令
+  HAL_UART_Receive_IT(&huart1, buffer, 5);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    // 1. 根据用户给的字符串获取对应的掩码
+    uint8_t cmd_ch = buffer[cmd_index];
+    uint16_t led_pin = get_led_pin(cmd_ch);
+
+    // 2. 处理点灯逻辑
+    HAL_GPIO_WritePin(GPIOA, led_pin, GPIO_PIN_RESET);
+    HAL_Delay(400);
+    HAL_GPIO_WritePin(GPIOA, led_pin, GPIO_PIN_SET);
+    HAL_Delay(400);
+
+    // 3. 更改指令的索引
+    cmd_index++;
+    if (cmd_index == 5)
+    {
+      cmd_index = 0;
+    }
+
+    // 4. 判断中断使能是否为关闭,如果是关闭的就,就说明数据接收完成
+    if ((huart1.Instance->CR1 & USART_CR1_RXNEIE) == 0)
+    {
+      cmd_index = 0;  // 指令清理,准备开始新的指令
+
+      // 保存指令
+      HAL_I2C_Mem_Write(&hi2c2, 0xA0, 0x00, I2C_MEMADD_SIZE_8BIT, buffer, 5, UINT32_MAX);
+      HAL_Delay(5);
+      HAL_UART_Receive_IT(&huart1, buffer, 5);
+    }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -111,8 +153,8 @@ int main(void)
   */
 void SystemClock_Config(void)
 {
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_OscInitTypeDef RCC_OscInitStruct = { 0 };
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = { 0 };
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -131,8 +173,8 @@ void SystemClock_Config(void)
 
   /** Initializes the CPU, AHB and APB buses clocks
   */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+    | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
@@ -171,11 +213,11 @@ void Error_Handler(void)
   * @param  line: assert_param error line source number
   * @retval None
   */
-void assert_failed(uint8_t *file, uint32_t line)
+void assert_failed(uint8_t* file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-  /* USER CODE END 6 */
+     /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
