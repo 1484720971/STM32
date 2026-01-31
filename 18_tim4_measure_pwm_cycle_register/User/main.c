@@ -34,14 +34,16 @@
     - 下次上升沿时，CCR1的值就是一个PWM周期的时长
 */
 
-int main(void) {
+int main(void)
+{
     USART1_Init();                  // 串口初始化
     TIM5_PWMLedBreathInit();        // TIM5产生100Hz PWM
     TIM5_SetDuty(10);               // 设置10%占空比
 
     TIM4_CH1MeasurePWMCycleInit();   // TIM4初始化输入捕获
 
-    while (1) {
+    while (1)
+    {
         printf("周期:%.2fms | 频率:%.2fHz\n", TIM4_GetPWMCycleMS(), TIM4_GetPWMFreq());
         Delay_s(1); // 每秒输出一次
     }

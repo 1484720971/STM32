@@ -76,7 +76,7 @@ uint16_t TIM4_ReadCCR1(void)
  */
 double TIM4_GetPWMCycleMS(void)
 {
-    return TIM4->CCR1 * 1.0 / 1000;
+    return (TIM4->CCR1 + 1.0) / 1000;
 }
 
 /**
@@ -85,7 +85,7 @@ double TIM4_GetPWMCycleMS(void)
  */
 double TIM4_GetPWMFreq(void)
 {
-    return 1000000.0 / TIM4->CCR1;
+    return 1000000.0 / (TIM4->CCR1 + 1);
 }
 
 void TIM4_IRQHandler(void)

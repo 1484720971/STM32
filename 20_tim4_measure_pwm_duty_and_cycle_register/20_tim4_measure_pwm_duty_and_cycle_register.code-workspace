@@ -1,0 +1,15 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "tim4.h": "c",
+            "stm32f10x.h": "c",
+            "tim5.h": "c"
+        }
+    },
+    "extensions": {}
+}
