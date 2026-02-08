@@ -36,8 +36,8 @@ void TIM3_PWMLcd_Init(void)
     // 3.3.2 配置输出比较3模式为PWM模式1
     TIM3->CCMR2 |= (TIM_CCMR2_OC3M_2 | TIM_CCMR2_OC3M_1);
     TIM3->CCMR2 &= ~TIM_CCMR2_OC3M_0;
-    // 3.3.3 配置CCR3捕获3输出极性 - 低电平有效
-    TIM5->CCER |= TIM_CCER_CC3P;
+    // 3.3.3 配置CCR3捕获3输出极性 - 高电平有效
+    TIM3->CCER &= ~TIM_CCER_CC3P;
     // 3.3.4 使能CCR3通道
     TIM3->CCER |= TIM_CCER_CC3E;
     // 3.3.5 配置CCR3初始值
@@ -49,8 +49,8 @@ void TIM3_PWMLcd_Init(void)
 
 /**
  * @brief 设置占空比
- * 
- * @param duty 
+ *
+ * @param duty
  */
 void TIM3_SetDuty(uint8_t duty)
 {

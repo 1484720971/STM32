@@ -1,0 +1,1 @@
+25_usart1_dma_hal\startup_stm32f103xe.o: startup_stm32f103xe.s
