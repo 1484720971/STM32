@@ -2,7 +2,7 @@
 
 /**
  * @brief 蜂鸣器初始化
- * 
+ *
  */
 void MLT8530_Init(void)
 {

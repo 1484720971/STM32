@@ -46,16 +46,27 @@ void ADC1_SingleChannelInit(void)
         timeout--;
     }
     // 3.11 开启A/D转换器，启动以开始测量。当该位为'1时，写入1将启动转换。
-    ADC1->CR2 |= ADC_CR2_ADON;
+    // ADC1->CR2 |= ADC_CR2_ADON;
+
+    /* ----------------- 触发方式二：使用软件外部触发来启动规则通道转换 ----------------- */
+    // 需要将 3.11 注释掉
+    // 3.12 使能规则通道的外部触发转换模式
+    ADC1->CR2 |= ADC_CR2_EXTTRIG;
+    // 3.13 选择启动规则通道转换的外部事件（选择外部触发源），配置为软件触发SWSTART
+    ADC1->CR2 |= ADC_CR2_EXTSEL_2;
+    ADC1->CR2 |= ADC_CR2_EXTSEL_1;
+    ADC1->CR2 |= ADC_CR2_EXTSEL_0;
+    // 3.14 开始转换规则通道（手动产生触发信号）
+    ADC1->CR2 |= ADC_CR2_SWSTART;
 }
 
 /**
  * @brief ADC1单通道读电压
- * 
+ *
  * @return double 电压值
  */
 double ADC1_SingleReadV(void)
 {
     // 12位的ADC范围[0，4095]
-    return ADC1->DR * 3.3 / 4095;   // (ADC1->DR) * 3.3 / (2 ^ n - 1)   n = 12
+    return ADC1->DR * 3.3 / 4095; // (ADC1->DR) * 3.3 / (2 ^ n - 1)   n = 12
 }
