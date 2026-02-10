@@ -3,9 +3,9 @@
         {
             "name": "Target 1",
             "includePath": [
-                "d:\\code\\Embedded\\STM32_code\\03_led_flow_register\\Start",
-                "d:\\code\\Embedded\\STM32_code\\03_led_flow_register\\User",
-                "d:\\code\\Embedded\\STM32_code\\03_led_flow_register\\Hardware\\LED",
+                "d:\\code\\Embedded\\STM32_code\\STM32\\03_led_flow_register\\Start",
+                "d:\\code\\Embedded\\STM32_code\\STM32\\03_led_flow_register\\User",
+                "d:\\code\\Embedded\\STM32_code\\STM32\\03_led_flow_register\\Hardware\\LED",
                 "D:\\Programs\\Keil\\ARM\\ARMCC\\include"
             ],
             "defines": [

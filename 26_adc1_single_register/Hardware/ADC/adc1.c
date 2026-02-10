@@ -22,7 +22,7 @@ void ADC1_SingleChannelInit(void)
     RCC->CR |= RCC_CFGR_ADCPRE_1;
     RCC->CR &= ~RCC_CFGR_ADCPRE_0;
     // 3.2 配置扫描模式，因为当前只有一个通道，所以关闭扫描模式。多通道时使用扫描模式
-    ADC1->CR1 &= ADC_CR1_SCAN;
+    ADC1->CR1 &= ~ADC_CR1_SCAN;
     // 3.3 配置数据对齐，右对齐。ADC 精度12位 数据寄存器16位 默认是右对齐（不用配）
     ADC1->CR2 &= ~ADC_CR2_ALIGN;
     // 3.4 配置连续转换，不停的扫描。结合之前的不扫描意思是单曲循环
@@ -53,9 +53,7 @@ void ADC1_SingleChannelInit(void)
     // 3.12 使能规则通道的外部触发转换模式
     ADC1->CR2 |= ADC_CR2_EXTTRIG;
     // 3.13 选择启动规则通道转换的外部事件（选择外部触发源），配置为软件触发SWSTART
-    ADC1->CR2 |= ADC_CR2_EXTSEL_2;
-    ADC1->CR2 |= ADC_CR2_EXTSEL_1;
-    ADC1->CR2 |= ADC_CR2_EXTSEL_0;
+    ADC1->CR2 |= ADC_CR2_EXTSEL;
     // 3.14 开始转换规则通道（手动产生触发信号）
     ADC1->CR2 |= ADC_CR2_SWSTART;
 }
