@@ -3,7 +3,10 @@
 
 #include "stm32f10x.h"
 #include "delay.h"
+<<<<<<< HEAD
 #include "stdio.h"
+=======
+>>>>>>> ad50eb83a47416599e01a9ce237e478d27fe0c80
 
 /**
  * @brief ADC1单通道初始化

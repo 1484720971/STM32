@@ -22,7 +22,11 @@ void ADC1_SingleChannelInit(void)
     RCC->CR |= RCC_CFGR_ADCPRE_1;
     RCC->CR &= ~RCC_CFGR_ADCPRE_0;
     // 3.2 配置扫描模式，因为当前只有一个通道，所以关闭扫描模式。多通道时使用扫描模式
+<<<<<<< HEAD
     ADC1->CR1 &= ~ADC_CR1_SCAN;
+=======
+    ADC1->CR1 &= ADC_CR1_SCAN;
+>>>>>>> ad50eb83a47416599e01a9ce237e478d27fe0c80
     // 3.3 配置数据对齐，右对齐。ADC 精度12位 数据寄存器16位 默认是右对齐（不用配）
     ADC1->CR2 &= ~ADC_CR2_ALIGN;
     // 3.4 配置连续转换，不停的扫描。结合之前的不扫描意思是单曲循环
@@ -50,6 +54,7 @@ void ADC1_SingleChannelInit(void)
 
     /* ----------------- 触发方式二：使用软件外部触发来启动规则通道转换 ----------------- */
     // 需要将 3.11 注释掉
+<<<<<<< HEAD
     // // 3.12 使能规则通道的外部触发转换模式
     ADC1->CR2 |= ADC_CR2_EXTTRIG;
     // // 3.13 选择启动规则通道转换的外部事件（选择外部触发源），配置为软件触发SWSTART
@@ -77,6 +82,14 @@ void ADC1_2_IRQHandler(void)
 
     // 转换完成
     isConvert = 1;
+=======
+    // 3.12 使能规则通道的外部触发转换模式
+    ADC1->CR2 |= ADC_CR2_EXTTRIG;
+    // 3.13 选择启动规则通道转换的外部事件（选择外部触发源），配置为软件触发SWSTART
+    ADC1->CR2 |= ADC_CR2_EXTSEL;
+    // 3.14 开始转换规则通道（手动产生触发信号）
+    ADC1->CR2 |= ADC_CR2_SWSTART;
+>>>>>>> ad50eb83a47416599e01a9ce237e478d27fe0c80
 }
 
 /**
@@ -159,7 +172,10 @@ void ADC1_DoubleChannelDMAInit(void)
     DMA1_Channel1->CCR |= DMA_CCR1_MSIZE_0;
     // 4.10 在ADC1里使能DMA模式
     ADC1->CR2 |= ADC_CR2_DMA;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ad50eb83a47416599e01a9ce237e478d27fe0c80
     /* -------------------------------- DMA初始化结束 --------------------------------- */
 
     // 3.8 开启A/D转换器。当该位为'0'时（第一次写1），写入'1将把ADC从断电模式下唤醒。
@@ -188,7 +204,11 @@ void ADC1_DoubleChannelDMAInit(void)
  * @brief ADC1双通道开启测量
  *
  */
+<<<<<<< HEAD
 void ADC1_DoubleChannelStart(uint16_t *pData, uint16_t len)
+=======
+void ADC1_DoubleChannelStart(uint16_t* pData, uint16_t len)
+>>>>>>> ad50eb83a47416599e01a9ce237e478d27fe0c80
 {
     // 配置存储器寄存器，发送到数据的地址
     DMA1_Channel1->CMAR = (uint32_t)pData;
