@@ -12,8 +12,6 @@ int main(void)
     printf("MemoryTypeID: 0x%X\n", (id & 0xFF00) >> 8);
     printf("CapacityID: 0x%X\n", id & 0xFF);
 
-    printf();
-
     while (1)
     {
     }
