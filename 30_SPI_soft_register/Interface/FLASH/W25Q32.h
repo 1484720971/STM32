@@ -4,6 +4,12 @@
 #include "soft_spi.h"
 
 /**
+ * @brief W25Q32初始化
+ * 
+ */
+void W25Q32_Init(void);
+
+/**
  * @brief 读取JEDEC ID
  *
  * @return uint32_t
@@ -23,5 +29,24 @@ uint32_t W25Q32_Read_JEDEC_ID(void);
  */
 void W25Q32_Page_Write(uint8_t block_addr, uint8_t sector_addr, uint8_t page_addr, uint8_t inner_addr, uint8_t *pData,
                        uint8_t len);
+
+/**
+ * @brief 写使能
+ * 
+ */
+void W25Q32_WriteEnable(void);
+
+/**
+ * @brief 读数据
+ * 
+ * @param block_addr 块地址
+ * @param sector_addr 段地址
+ * @param page_addr 页地址
+ * @param inner_addr 内部地址
+ * @param pData 数据
+ * @param len 数据长度
+ */
+void W25Q32_ReadData(uint8_t block_addr, uint8_t sector_addr, uint8_t page_addr, uint8_t inner_addr, uint8_t *pData,
+                     uint8_t len);
 
 #endif /* __W25Q32_H__ */
