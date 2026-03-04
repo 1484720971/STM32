@@ -2,7 +2,7 @@
 #include "usart.h"
 #include "fsmc_bank1_3_sram.h"
 
-#if 0
+#if 1
 /*
     1. __attribute__的作用：指定这个变量的位置(FSMC中bank1的3号插槽)
     2. __attribute__必须4字节对齐
