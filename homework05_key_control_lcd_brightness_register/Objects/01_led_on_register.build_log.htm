@@ -1,0 +1,168 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=HN0AE-5I953-74AS0-BNEUE-TN50P-4RAZ1
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  D:\Programs\Keil\ARM\arm5_compiler\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\code\Embedded\STM32_code\STM32\homework05_key_control_lcd_brightness_register\homework05_key_control_lcd_brightness_register.uvprojx
+Project File Date:  03/04/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Programs\Keil\ARM\arm5_compiler\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_hd.s...
+compiling led.c...
+Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\LED\led.c(53): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\LED\led.c: 2 warnings, 0 errors
+compiling core_cm3.c...
+compiling system_stm32f10x.c...
+compiling usart.c...
+.\Hardware\USART\usart.h(29): warning:  #1295-D: Deprecated declaration USART1_ReceiveByte - give arg types
+  uint8_t USART1_ReceiveByte();
+.\Hardware\USART\usart.h(47): warning:  #1-D: last line of file ends without a newline
+  #endif /* __USART_H__ */
+Hardware\USART\usart.c(216): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\USART\usart.c: 3 warnings, 0 errors
+compiling main.c...
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\KEY\key.h(26): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\TIM\tim3.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM3_H__ */
+.\Application\app_key_lcd_brightness_ctrl.h(16): warning:  #1295-D: Deprecated declaration key_control_lcd_brightness_10level_Init - give arg types
+  void key_control_lcd_brightness_10level_Init();
+.\Application\app_key_lcd_brightness_ctrl.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif /* __APP_KEY_LCD_BRIGHTNESS_CTRL_H__ */
+User\main.c: 6 warnings, 0 errors
+compiling key.c...
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\KEY\key.h(26): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\KEY\key.c(119): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\KEY\key.c: 4 warnings, 0 errors
+compiling hard_I2C.c...
+Hardware\I2C\hard_I2C.h(76): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\I2C\hard_I2C.c(173): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\I2C\hard_I2C.c: 2 warnings, 0 errors
+compiling tim6.c...
+.\Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\TIM\tim6.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM6_H__ */
+Hardware\TIM\tim6.c(56): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\TIM\tim6.c: 4 warnings, 0 errors
+compiling systick.c...
+.\Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+Hardware\SYSTICK\systick.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif /* __SYSTICK_H__ */
+Hardware\SYSTICK\systick.c(45): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\SYSTICK\systick.c: 3 warnings, 0 errors
+compiling delay.c...
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+User\delay.c(42): warning:  #1-D: last line of file ends without a newline
+  }
+User\delay.c: 2 warnings, 0 errors
+compiling tim5.c...
+Hardware\TIM\tim5.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM5_H__ */
+Hardware\TIM\tim5.c: 1 warning, 0 errors
+compiling tim1.c...
+Hardware\TIM\tim1.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM1_H__ */
+Hardware\TIM\tim1.c(67): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\TIM\tim1.c: 2 warnings, 0 errors
+compiling tim3.c...
+Hardware\TIM\tim3.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM3_H__ */
+Hardware\TIM\tim3.c(58): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\TIM\tim3.c: 2 warnings, 0 errors
+compiling tim4.c...
+Hardware\TIM\tim4.h(44): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM4_H__ */
+Hardware\TIM\tim4.c(177): warning:  #1-D: last line of file ends without a newline
+  }
+Hardware\TIM\tim4.c: 2 warnings, 0 errors
+compiling M24C02.c...
+.\Hardware\I2C\hard_I2C.h(76): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+Interface\EEPROM\M24C02.h(49): warning:  #1-D: last line of file ends without a newline
+  #endif /* __M24C02_H__ */
+Interface\EEPROM\M24C02.c(111): warning:  #1-D: last line of file ends without a newline
+  }
+Interface\EEPROM\M24C02.c: 4 warnings, 0 errors
+compiling app_key_lcd_brightness_ctrl.c...
+.\User\delay.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\LED\led.h(35): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\KEY\key.h(26): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\Hardware\TIM\tim3.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif /* __TIM3_H__ */
+Application\app_key_lcd_brightness_ctrl.h(16): warning:  #1295-D: Deprecated declaration key_control_lcd_brightness_10level_Init - give arg types
+  void key_control_lcd_brightness_10level_Init();
+Application\app_key_lcd_brightness_ctrl.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif /* __APP_KEY_LCD_BRIGHTNESS_CTRL_H__ */
+Application\app_key_lcd_brightness_ctrl.c(107): warning:  #1-D: last line of file ends without a newline
+  }
+Application\app_key_lcd_brightness_ctrl.c: 7 warnings, 0 errors
+linking...
+Program Size: Code=1628 RO-data=336 RW-data=12 ZI-data=1124  
+FromELF: creating hex file...
+".\Objects\01_led_on_register.axf" - 0 Error(s), 44 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  D:/Programs/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

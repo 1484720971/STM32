@@ -1,0 +1,9 @@
+.\objects\tim6.o: Hardware\TIM\tim6.c
+.\objects\tim6.o: Hardware\TIM\tim6.h
+.\objects\tim6.o: .\Start\stm32f10x.h
+.\objects\tim6.o: .\Start\core_cm3.h
+.\objects\tim6.o: D:\Programs\Keil\ARM\arm5_compiler\Bin\..\include\stdint.h
+.\objects\tim6.o: .\Start\system_stm32f10x.h
+.\objects\tim6.o: .\Hardware\LED\led.h
+.\objects\tim6.o: .\User\delay.h
+.\objects\tim6.o: D:\Programs\Keil\ARM\arm5_compiler\Bin\..\include\stdio.h

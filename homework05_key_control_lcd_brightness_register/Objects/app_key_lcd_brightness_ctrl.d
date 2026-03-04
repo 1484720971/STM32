@@ -1,0 +1,10 @@
+.\objects\app_key_lcd_brightness_ctrl.o: Application\app_key_lcd_brightness_ctrl.c
+.\objects\app_key_lcd_brightness_ctrl.o: Application\app_key_lcd_brightness_ctrl.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\Hardware\KEY\key.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\User\delay.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\Start\stm32f10x.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\Start\core_cm3.h
+.\objects\app_key_lcd_brightness_ctrl.o: D:\Programs\Keil\ARM\arm5_compiler\Bin\..\include\stdint.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\Start\system_stm32f10x.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\Hardware\LED\led.h
+.\objects\app_key_lcd_brightness_ctrl.o: .\Hardware\TIM\tim3.h
