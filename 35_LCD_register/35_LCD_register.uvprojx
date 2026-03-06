@@ -684,6 +684,11 @@
               <FileType>5</FileType>
               <FilePath>.\Interface\LCD\lcd.h</FilePath>
             </File>
+            <File>
+              <FileName>lcd_font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Interface\LCD\lcd_font.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
