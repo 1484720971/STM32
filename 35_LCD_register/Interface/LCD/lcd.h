@@ -6,6 +6,7 @@
 #include "key.h"
 #include "led.h"
 #include "tim3.h"
+#include "math.h"
 
 /* 宏定义地址表示发送命令/地址 */
 #define LCD_ADDRESS_BASE 0x6C000000
@@ -28,9 +29,9 @@
 #define GREEN 0x07E0
 #define CYAN 0x7FFF
 #define YELLOW 0xFFE0
-#define BROWN 0XBC40  // 棕色
-#define BRRED 0XFC07  // 棕红色
-#define GRAY 0X8430   // 灰色
+#define BROWN 0XBC40 // 棕色
+#define BRRED 0XFC07 // 棕红色
+#define GRAY 0X8430  // 灰色
 
 /**
  * @brief LCD初始化
@@ -125,5 +126,128 @@ void LCD_Control_Backlight_level(void);
  * @param bColor 背景的颜色
  */
 void LCD_WriteASCIIChar(uint16_t x, uint16_t y, uint16_t height, uint16_t c, uint16_t fColor, uint16_t bColor);
+
+/**
+ * @brief 在指定的位置显示指定的字符串
+ *
+ * @param x 起始横坐标
+ * @param y 起始纵坐标
+ * @param height 高度   宽度 = 高度 / 2
+ * @param str 指定的字符串指针
+ * @param fColor 字符的颜色
+ * @param bColor 背景的颜色
+ */
+void LCD_WriteASCIIString(uint16_t x, uint16_t y, uint16_t height, const char *str, uint16_t fColor, uint16_t bColor);
+
+/**
+ * @brief 在指定的位置显示数组中的中文
+ *
+ * @param x 起始横坐标
+ * @param y 起始纵坐标
+ * @param height 高度 32 数组中的中文字符都是32
+ * @param index 下标
+ * @param fColor 字符的颜色
+ * @param bColor 背景的颜色
+ */
+void LCD_WriteChineseChar(uint16_t x, uint16_t y, uint16_t height, uint8_t index, uint16_t fColor, uint16_t bColor);
+
+/**
+ * @brief 在指定的位置显示图片
+ *
+ * @param x 起始横坐标
+ * @param y 起始纵坐标
+ * @param width 图片的宽
+ * @param height 图片的高
+ */
+void LCD_DisplayImg(uint16_t x, uint16_t y, uint16_t width, uint16_t height);
+
+/**
+ * @brief 绘制点
+ *
+ * @param x 起始横坐标
+ * @param y 起始纵坐标
+ * @param width 宽度
+ * @param color 颜色
+ */
+void LCD_DrawPoint(uint16_t x, uint16_t y, uint16_t width, uint16_t color);
+
+/**
+ * @brief 绘制线
+ *
+ * @param x1 起始横坐标
+ * @param y1 起始纵坐标
+ * @param x2 结束横坐标
+ * @param y2 结束纵坐标
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t width, uint16_t color);
+
+/**
+ * @brief 绘制线
+ *
+ * @param x1 起始横坐标
+ * @param y1 起始纵坐标
+ * @param x2 结束横坐标
+ * @param y2 结束纵坐标
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawRect(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t width, uint16_t color);
+
+/**
+ * @brief 绘制圆
+ * 
+ * @param xCenter 圆心横坐标
+ * @param yCenter 圆心纵坐标
+ * @param r 半径
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawCircle(uint16_t xCenter, uint16_t yCenter, uint16_t r, uint16_t width,uint16_t color);
+
+/**
+ * @brief 绘制圆
+ * 
+ * @param xCenter 圆心横坐标
+ * @param yCenter 圆心纵坐标
+ * @param r 半径
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawCircle(uint16_t xCenter, uint16_t yCenter, uint16_t r, uint16_t width,uint16_t color);
+
+/**
+ * @brief 绘制圆升级版
+ * 
+ * @param xCenter 圆心横坐标
+ * @param yCenter 圆心纵坐标
+ * @param r 半径
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawCircle_Pro(uint16_t xCenter, uint16_t yCenter, uint16_t r, uint16_t width,uint16_t color);
+
+/**
+ * @brief 绘制实心圆
+ * 
+ * @param xCenter 圆心横坐标
+ * @param yCenter 圆心纵坐标
+ * @param r 半径
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawFillCircle(uint16_t xCenter, uint16_t yCenter, uint16_t r, uint16_t width,uint16_t color);
+
+/**
+ * @brief 绘制实心圆升级版
+ * 
+ * @param xCenter 圆心横坐标
+ * @param yCenter 圆心纵坐标
+ * @param r 半径
+ * @param width 线宽
+ * @param color 颜色
+ */
+void LCD_DrawFillCircle_Pro(uint16_t xCenter, uint16_t yCenter, uint16_t r, uint16_t width,uint16_t color);
 
 #endif /* __LCD_H__ */
